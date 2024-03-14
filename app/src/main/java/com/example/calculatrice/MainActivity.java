@@ -3,6 +3,7 @@ package com.example.calculatrice;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
     public void resultButton(View view) {
         Context context = getApplicationContext();
         String result = ((TextView)findViewById(R.id.operation)).getText().toString();
-        // result = ""+result_number;
 
-        String[] split = result.split("(?<=\\d)(?=\\D)|(?<=\\D)(?=\\d)");
+        String[] split = result.split("(?<=\\d)(?=\\D)|(?<=\\D)(?=\\d)|(?<=\\d)(?=\\.)|(?<=\\.)(?=\\d)");
         float result_number;
+        try {
         switch (split[1]){
             case "+":
                 result_number=Float.parseFloat(split[0])+Float.parseFloat(split[2]);
@@ -66,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, result, duration);
         toast.show();
+        } catch (Exception e) {
+            Log.e("ResultButton", "An error occurred during calculation", e);
+        }
     }
 
     public void delete(View view) {
@@ -73,11 +75,6 @@ public class MainActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.operation)).setText("");
     }
     public void backspace(View view) {
-        /*String str = ((TextView)findViewById(R.id.operation)).getText().toString();
-        if (str != null && !str.isEmpty() && str.charAt(str.length() - 1) == 'x') {
-            str = str.substring(0, str.length() - 1);
-            ((TextView)findViewById(R.id.operation)).setText(str);
-        }*/
         TextView operationText= findViewById(R.id.operation);
         String currentText = operationText.getText().toString();
         if (!currentText.isEmpty()) {
