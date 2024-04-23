@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcul de Moyenne"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/editTextValue1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginTop="24dp"/>
+
+    <EditText
+        android:id="@+id/editTextValue2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/editTextValue1"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextValue3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/editTextValue2"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculer"
+        android:layout_below="@id/editTextValue3"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonCalculate"
+        android:text="Moyenne"
+        android:visibility="invisible"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
