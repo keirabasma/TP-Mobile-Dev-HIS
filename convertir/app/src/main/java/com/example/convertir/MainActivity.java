@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         registerForContextMenu(Euro_Dinar);
     }
     private void convertir() {
-        Intent intent = new Intent(MainActivity.this, resu.class);
 
         String input = editTextPhone.getText().toString();
         if (!input.isEmpty()) {
@@ -62,10 +61,17 @@ public class MainActivity extends AppCompatActivity {
                 textViewResultat.setText(String.format("Resultat: "+resultat+"DZD", resultat));
             }else if (Dinar_Dollar.isChecked()) {
                 float resultat = dinarsToDollar(number);
+                Intent intent;
+                intent = new Intent(MainActivity.this, resu.class);
                 intent.putExtra("message","Resultat" + resultat );
+                startActivity(intent);
+
             } else if (Dollar_Dinar.isChecked()) {
+                Intent intent = new Intent(MainActivity.this, resu.class);
                 float resultat = DollarToDinar(number);
                 intent.putExtra("message","Resultat" + resultat );
+                startActivity(intent);
+
             }
         } else {
             new AlertDialog.Builder(this)
@@ -75,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                     .create()
                     .show();
         }
-        startActivity(intent);
 
     }
     @Override

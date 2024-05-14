@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Convertir"
         tools:targetApi="31">
         <activity
-            android:name=".res"
+            android:name=".resu"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
