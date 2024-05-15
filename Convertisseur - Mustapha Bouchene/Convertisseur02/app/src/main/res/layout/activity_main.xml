@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="120px"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25px"
+        android:text="Conversion de Monie"
+        android:textAlignment="center"
+        android:textSize="62px" />
+
+    <EditText
+        android:id="@+id/entered"
+        android:layout_width="match_parent"
+        android:layout_height="130px"
+        android:layout_marginHorizontal="30px"
+        android:layout_marginTop="30px"
+        android:inputType="number" />
+
+    <RadioGroup
+        android:id="@+id/radios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20px">
+
+        <RadioButton
+            android:id="@+id/radioDinars"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Dinar -> Euro"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioEuro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Euro -> Dinar"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="converterFunc"
+        android:text="Convertir" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30px"
+        android:layout_marginTop="30px"
+        android:text="Résultat"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+
+</LinearLayout>

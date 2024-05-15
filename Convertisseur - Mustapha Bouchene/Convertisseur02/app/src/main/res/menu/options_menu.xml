@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.convertisseur02.MainActivity">
+<item
+        android:id="@+id/b2_item1"
+        android:title=" Conversion DinarDollar" />
+
+    <item
+        android:id="@+id/b2_item2"
+        android:title="Quiter" />
+</menu>
