@@ -1,8 +1,0 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-
-    <style name="Base.Theme.Converter" parent="Theme.Material3.DayNight">
-
-    </style>
-
-    <style name="Theme.Converter" parent="Base.Theme.Converter" />
-</resources>

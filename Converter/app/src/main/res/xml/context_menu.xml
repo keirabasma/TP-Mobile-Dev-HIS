@@ -1,8 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/menu_dinar_to_euro"
-        android:title="Taux dinar -&gt; euro" />
-    <item
-        android:id="@+id/menu_euro_to_dinar"
-        android:title="Taux euro -&gt; dinar" />
-</menu>
