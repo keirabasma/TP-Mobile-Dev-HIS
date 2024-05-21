@@ -1,0 +1,28 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id buttonConvert
+id editTextValue
+id menu_conversion_dinar_dollar
+id menu_dinar_to_euro
+id menu_euro_to_dinar
+id menu_quitter
+id radioButtonDinarToEuro
+id radioButtonEuroToDinar
+id radioGroupDirection
+id textViewResult
+layout activity_main
+menu context_menu
+menu option_menu
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.Converter
+style Theme.Converter
+xml backup_rules
+xml context_menu
+xml data_extraction_rules
+xml option_menu
