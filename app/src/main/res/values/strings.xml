@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Contacts - Mustapha</string>
+    <string name="lastname0">Prenom</string>
+    <string name="name0">nom</string>
 </resources>
