@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ConvertisseurDeDevise</string>
+    <string name="conversion_monnaie">Conversion de Monnaie</string>
+    <string name="entrez_valeur">Entrez la valeur</string>
+    <string name="dinar_to_euro">Dinar -> Euro</string>
+    <string name="euro_to_dinar">Euro -> Dinar</string>
+    <string name="convertir">CONVERTIR</string>
+    <string name="resultat">Résultat</string>
+    <string name="taux_dinar_euro">Taux dinar -> euro</string>
+    <string name="taux_euro_dinar">Taux euro -> dinar</string>
+    <string name="conversion_dinar_dollar">Conversion Dinar &lt;-&gt; Dollar</string>
+    <string name="quitter">Quitter</string>
+    <string name="entrez_une_valeur">Veuillez entrer une valeur</string>
+    <string name="taux_dinar_euro_toast">Taux de conversion dinar -> euro: 0.0071</string>
+    <string name="taux_euro_dinar_toast">Taux de conversion euro -> dinar: 140.45</string>
+    <string name="fonctionnalite_avenir">Fonctionnalité à venir</string>
+</resources>
