@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_conversion_dinar_dollar"
+        android:title="Conversion Dinar &lt;--&gt; Dollar" />
+    <item
+        android:id="@+id/menu_quitter"
+        android:title="Quitter" />
+</menu>
