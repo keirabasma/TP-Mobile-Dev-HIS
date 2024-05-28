@@ -1,95 +1,60 @@
-package com.example.calculator;
+package com.example.login;
 
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.database.Cursor;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
-
 public class MainActivity extends AppCompatActivity {
 
-    private EditText firstNumber;
-    private EditText secondNumber;
-    private TextView resultText;
+    private EditText usernameEditText, emailEditText, passwordEditText;
+            private Button loginButton;
+            private DatabaseHelper db;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        firstNumber = findViewById(R.id.Number1);
-        secondNumber = findViewById(R.id.Number2);
-        resultText = findViewById(R.id.result);
-
-        Button addButton = findViewById(R.id.addButton);
-        Button subtractButton = findViewById(R.id.subtractButton);
-        Button multiplyButton = findViewById(R.id.multipButton);
-        Button divideButton = findViewById(R.id.divideButton);
-
-        addButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                calculate('+');
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_main);
+
+                // Initialiser les vues
+                usernameEditText = findViewById(R.id.username);
+                emailEditText = findViewById(R.id.email);
+                passwordEditText = findViewById(R.id.password);
+                loginButton = findViewById(R.id.login);
+
+                // Initialiser la base de données
+                db = new DatabaseHelper(this);
+
+                // Ajouter un écouteur au bouton de connexion
+                loginButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String username = usernameEditText.getText().toString();
+                        String email = emailEditText.getText().toString();
+                        String password = passwordEditText.getText().toString();
+
+                        // Vérifier les informations de l'utilisateur
+                        Cursor cursor = db.getUser(email, password);
+                        if (cursor != null && cursor.moveToFirst() && cursor.getString(1).equals(username)) {
+                            // Informations correctes, ouvrir une nouvelle activité
+                            Intent intent = new Intent(MainActivity.this, NewActivity.class);
+                            startActivity(intent);
+                        } else {
+                            // Informations incorrectes, afficher un message d'erreur
+                            Toast.makeText(MainActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+                        }
+                        if (cursor != null) {
+                            cursor.close();
+                        }
+                    }
+                });
             }
-        });
-
-        subtractButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calculate('-');
-            }
-        });
-
-        multiplyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calculate('*');
-            }
-        });
-
-        divideButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calculate('/');
-            }
-        });
-    }
-
-    private void calculate(char operator) {
-        String num1Str = firstNumber.getText().toString();
-        String num2Str = secondNumber.getText().toString();
-
-        if (num1Str.isEmpty() || num2Str.isEmpty()) {
-            Toast.makeText(this, "Please enter numbers", Toast.LENGTH_SHORT).show();
-            return;
         }
 
-        double num1 = Double.parseDouble(num1Str);
-        double num2 = Double.parseDouble(num2Str);
-        double result = 0;
 
-        switch (operator) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                if (num2 != 0) {
-                    result = num1 / num2;
-                } else {
-                    Toast.makeText(this, "Cannot divide by zero", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                break;
-        }
 
-        resultText.setText(String.valueOf(result));
-    }
-}
