@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test TP!"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TableRow
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/word1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="02"
+                android:text="Word1 : "
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="5dp"
+                />
+            <EditText
+                android:id="@+id/edit1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="08"
+                android:hint="First text"
+                android:padding="5dp"
+                />
+
+
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_marginTop="5dp"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/word2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="02"
+                android:text="Word2 : "
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="5dp"
+                />
+            <EditText
+                android:id="@+id/edit2"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="08"
+                android:hint="Second text"
+                android:padding="5dp"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="2dp"
+            android:padding="5dp">
+            <Button
+                android:id="@+id/btnLength"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="05"
+                android:layout_marginEnd="2dp"
+                android:text="Length"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                />
+            <Button
+                android:id="@+id/btnCommon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="05"
+                android:layout_marginStart="2dp"
+                android:text="Common"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                />
+
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="2dp"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="02"
+                android:text="Length : "
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="5dp"
+                />
+            <EditText
+                android:id="@+id/lengthField"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="08"
+                android:hint="Length"
+                android:padding="5dp"
+                />
+
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="5dp"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="02"
+                android:text="Common:"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="3dp"
+                />
+            <EditText
+                android:id="@+id/commonField"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="08"
+                android:hint="Common"
+                android:padding="5dp"
+                />
+
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Clear"/>
+
+</LinearLayout>
